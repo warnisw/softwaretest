@@ -73,5 +73,8 @@ public class Employee {
 
     public int getAge() { return age; }
 
+    public static void main(String[] args){
+        System.out.println("Test main class for report");
+    }
 
 }
