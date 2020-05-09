@@ -37,7 +37,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>ie.gmit.EmployeeTest</mainClass>
+              <mainClass>ie.gmit.Employee</mainClass>
             </manifest>
           </archive>
 
