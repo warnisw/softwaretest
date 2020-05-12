@@ -6,8 +6,8 @@ public class Customer extends Person {
     private double balance;
 
 
-    public Customer(String title, String name, String pps, String type, String address, long phone, int age, double balance) {
-        super(title, name, pps, type, address, phone, age);
+    public Customer(String title, String name, String address, long phone, double balance) {
+        super(title, name, address, phone);
         setBalance(balance);
 
     }

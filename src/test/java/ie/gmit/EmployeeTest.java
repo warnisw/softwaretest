@@ -44,4 +44,25 @@ public class EmployeeTest {
         assertEquals("Salary must be in decimal(0.00) format", e.getMessage());
     }
 
+    @DisplayName("Testing invalid pps entry")
+    @Test
+    void testingInvalidPPS() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> employee = new Employee("Mr", "Ruandria", "NZ", "Contract", "94 Claremorris", 123456789,23, 2000));
+        assertEquals("PPS must contain 8 characters", e.getMessage());
+    }
+
+    @DisplayName("Testing invalid type entry")
+    @Test
+    void testingInvalidType() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> employee = new Employee("Mr", "Ruairi Doherty", "NZ23AM23", "none", "69 GMIT", 123456789, 23, 2000));
+        assertEquals("Must contain employment type", e.getMessage());
+    }
+
+    @DisplayName("Testing invalid age entry")
+    @Test
+    void testingInvalidAge() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> employee = new Employee("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill", 123456789,13, 2000));
+        assertEquals("Employee age must be over 16 to work in the company", e.getMessage());
+    }
+
 }
