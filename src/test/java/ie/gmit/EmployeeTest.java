@@ -40,8 +40,8 @@ public class EmployeeTest {
     @DisplayName("Testing invalid salary entry")
     @Test
     void testingInvalidSalary() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> employee = new Employee("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill", 123456789,19, -1));
-        assertEquals("Salary must be a positive float", e.getMessage());
+        Exception e = assertThrows(IllegalArgumentException.class, () -> employee = new Employee("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill", 123456789,19, 2.111));
+        assertEquals("Salary must be in decimal(0.00) format", e.getMessage());
     }
 
 }
