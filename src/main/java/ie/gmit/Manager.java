@@ -1,20 +1,23 @@
 package ie.gmit;
 
 public class Manager extends Employee {
-    float annualSalary;
+    double annualSalary;
 
-    public Manager(String title, String name, String pps, String type, String address, long phone, int age, float salary, float annualSalary) {
+    public Manager(String title, String name, String pps, String type, String address, long phone, int age, double salary, double annualSalary) {
         super(title, name, pps, type, address, phone, age, salary);
         setAnnualSalary(annualSalary);
     }
 
 
-    public void setAnnualSalary(float annualSalary) {
-        if(annualSalary >= 0)
+    public void setAnnualSalary(double annualSalary) {
+        Double foo = annualSalary * 100;
+        foo = foo - foo.intValue();
+        if (foo.compareTo(0D) == 0) {
             this.annualSalary = annualSalary;
+        }
         else
-            throw new IllegalArgumentException("Annual Salary must be a positive float");
+            throw new IllegalArgumentException("Annual Salary must be in decimal(0.00) format");
     }
 
-    public float getAnnualSalary() { return annualSalary; }
+    public double getAnnualSalary() { return annualSalary; }
 }

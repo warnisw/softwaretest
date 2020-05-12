@@ -1,19 +1,22 @@
 package ie.gmit;
 
 public class Employee extends Person {
-    float salary;
+    double salary;
 
-    public Employee(String title, String name, String pps, String type, String address, long phone, int age, float salary) {
+    public Employee(String title, String name, String pps, String type, String address, long phone, int age, double salary) {
         super(title, name, pps, type, address, phone, age);
         setSalary(salary);
     }
 
-    public void setSalary(float salary) {
-        if(salary >= 0)
+    public void setSalary(double salary) {
+        Double foo = salary * 100;
+        foo = foo - foo.intValue();
+        if (foo.compareTo(0D) == 0) {
             this.salary = salary;
+        }
         else
-            throw new IllegalArgumentException("Salary must be a positive float");
+            throw new IllegalArgumentException("Salary must be in decimal(0.00) format");
     }
 
-    public float getSalary() { return salary; }
+    public double getSalary() { return salary; }
 }

@@ -24,7 +24,7 @@ public class SalesPerson extends Employee {
             throw new IllegalArgumentException("Hour Rate must be a positive float");
     }
 
-    public float getSalary() {
+    public double getSalary() {
         return hourRate * hours * 50; //50 working weeks per year
     }
 
