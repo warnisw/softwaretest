@@ -6,8 +6,8 @@ public class Employee extends Person {
     private String type = "";
     private int age = 0;
 
-    public Employee(String title, String name, String pps, String type, String address, long phone, int age, double salary) {
-        super(title, name, address, phone);
+    public Employee(String title, String name, String pps, String type, String address, String email, long phone, int age, double salary) {
+        super(title, name, address, email, phone);
         setSalary(salary);
         setAddress(address);
         setType(type);

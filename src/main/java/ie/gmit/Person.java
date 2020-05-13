@@ -4,12 +4,14 @@ public class Person {
     private String title = "";
     private String name = "";
     private String address = "";
+    private String email = "";
     private long phone = 0;
 
-    public Person(String title, String name, String address, long phone) {
+    public Person(String title, String name, String address, String email, long phone) {
         setTitle(title);
         setName(name);
         setAddress(address);
+        setEmail(email);
         setPhone(phone);
     }
 
@@ -41,6 +43,16 @@ public class Person {
         else
             this.phone = phone;
     }
+
+    public void setEmail(String email) {
+        if(email.contains("@") && email.length() > 3 )
+            this.email = email;
+        else
+            throw new IllegalArgumentException("Invalid Email Entry, make sure to include the @ symbol");
+
+    }
+
+    public String getEmail() { return email; }
 
     public String getTitle() { return title; }
 

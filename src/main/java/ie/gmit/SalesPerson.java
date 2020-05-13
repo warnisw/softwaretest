@@ -4,8 +4,8 @@ public class SalesPerson extends Employee {
     float hourRate;
     int hours;
 
-    public SalesPerson(String title, String name, String pps, String type, String address, long phone, int age, float salary, float hourRate, int hours) {
-        super(title, name, pps, type, address, phone, age, salary);
+    public SalesPerson(String title, String name, String pps, String type, String address, String email, long phone, int age, float salary, float hourRate, int hours) {
+        super(title, name, pps, type, address, email, phone, age, salary);
         setHourRate(hourRate);
         setHours(hours);
     }

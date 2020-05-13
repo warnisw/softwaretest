@@ -3,8 +3,8 @@ package ie.gmit;
 public class Manager extends Employee {
     double annualSalary;
 
-    public Manager(String title, String name, String pps, String type, String address, long phone, int age, double salary, double annualSalary) {
-        super(title, name, pps, type, address, phone, age, salary);
+    public Manager(String title, String name, String pps, String type, String address, String email, long phone, int age, double salary, double annualSalary) {
+        super(title, name, pps, type, address, email, phone, age, salary);
         setAnnualSalary(annualSalary);
     }
 

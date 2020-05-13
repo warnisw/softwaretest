@@ -26,7 +26,7 @@ public class SalesPersonTest {
     @DisplayName("Testing constructor initialisation success")
     @Test
     void testingConstructorSuccess() {
-        salesPerson = new SalesPerson("Mr", "Ruairi Doherty", "NZ23AMZ3", "Contract", "33 Briarhill",123456789,23, 2000, 20, 50);
+        salesPerson = new SalesPerson("Mr", "Ruairi Doherty", "NZ23AMZ3", "Contract", "33 Briarhill", "wow@gmail.com",123456789,23, 2000, 20, 50);
         assertEquals("Mr", salesPerson.getTitle());
         assertEquals("Ruairi Doherty", salesPerson.getName());
         assertEquals(123456789, salesPerson.getPhone());
@@ -37,19 +37,20 @@ public class SalesPersonTest {
         assertEquals(50000, salesPerson.getSalary());
         assertEquals(20, salesPerson.getHourRate());
         assertEquals(50, salesPerson.getHours());
+        assertEquals("wow@gmail.com", salesPerson.getEmail());
     }
 
     @DisplayName("Testing invalid Hour Rate")
     @Test
     void testingInvalidHourRate() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> salesPerson = new SalesPerson("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill", 123456789,19, 2000, -10, 50));
+        Exception e = assertThrows(IllegalArgumentException.class, () -> salesPerson = new SalesPerson("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill","wow@gmail.com", 123456789,19, 2000, -10, 50));
         assertEquals("Hour Rate must be a positive float", e.getMessage());
     }
 
     @DisplayName("Testing invalid Hours")
     @Test
     void testingInvalidHours() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> salesPerson = new SalesPerson("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill", 123456789,19, 2000, 20, -50));
+        Exception e = assertThrows(IllegalArgumentException.class, () -> salesPerson = new SalesPerson("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill","wow@gmail.com", 123456789,19, 2000, 20, -50));
         assertEquals("Hours must be a positive float", e.getMessage());
     }
 }

@@ -26,7 +26,7 @@ public class ManagerTest {
     @DisplayName("Testing constructor initialisation success")
     @Test
     void testingConstructorSuccess() {
-        manager = new Manager("Mr", "Ruairi Doherty", "NZ23AMZ3", "Contract", "33 Briarhill",123456789,23, 2000, 2.11);
+        manager = new Manager("Mr", "Ruairi Doherty", "NZ23AMZ3", "Contract", "33 Briarhill","wow@gmail.com",123456789,23, 2000, 2.11);
         assertEquals("Mr", manager.getTitle());
         assertEquals("Ruairi Doherty", manager.getName());
         assertEquals(123456789, manager.getPhone());
@@ -36,12 +36,13 @@ public class ManagerTest {
         assertEquals("NZ23AMZ3", manager.getPps());
         assertEquals(2000, manager.getSalary());
         assertEquals(2.11, manager.getAnnualSalary());
+        assertEquals("wow@gmail.com", manager.getEmail());
     }
 
     @DisplayName("Testing invalid annual salary entry")
     @Test
     void testingInvalidAnnualSalary() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> manager = new Manager("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill", 123456789,19, 2000, 2.111));
+        Exception e = assertThrows(IllegalArgumentException.class, () -> manager = new Manager("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill","wow@gmail.com", 123456789,19, 2000, 2.111));
         assertEquals("Annual Salary must be in decimal(0.00) format", e.getMessage());
     }
 }
