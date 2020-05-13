@@ -26,22 +26,19 @@ public class CustomerTest {
     @DisplayName("Testing constructor initialisation success")
     @Test
     void testingConstructorSuccess() {
-        Customer = new Customer("Mr", "Ruairi Doherty", "NZ23AMZ3", "Contract", "33 Briarhill",123456789,23, 0);
+        Customer = new Customer("Mr", "Ruairi Doherty", "33 Briarhill", 123456789, 2000);
         assertEquals("Mr", Customer.getTitle());
         assertEquals("Ruairi Doherty", Customer.getName());
         assertEquals(123456789, Customer.getPhone());
-        assertEquals(23, Customer.getAge());
-        assertEquals("Contract", Customer.getType());
         assertEquals("33 Briarhill", Customer.getAddress());
-        assertEquals("NZ23AMZ3", Customer.getPps());
-        assertEquals(0, Customer.getBalance());
+        assertEquals(2000, Customer.getBalance());
 
     }
 
     @DisplayName("Testing invalid balance")
     @Test
-    void testingInvalidHourRate() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> Customer = new Customer("Mr", "Ruairi Doherty", "NZ23AZ23", "Contract", "11 Salthill", 123456789,19, 20.112));
+    void testingInvalidBalance() {
+        Exception e = assertThrows(IllegalArgumentException.class, () -> Customer = new Customer("Mr", "Ruairi Doherty", "NZ23AZ23", 123456789, 2.111));
         assertEquals("Balance must be in decimal(0.00) format", e.getMessage());
     }
 
